@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>hezx&#39;s notes</title>
+  <title>hezx</title>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezx.github.io/"/>
-  <updated>2016-11-26T21:55:17.000Z</updated>
+  <updated>2016-11-26T22:25:24.000Z</updated>
   <id>http://hezx.github.io/</id>
   
   <author>
@@ -16,11 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>config mac</title>
+    <link href="http://hezx.github.io/2016/11/config-mac/"/>
+    <id>http://hezx.github.io/2016/11/config-mac/</id>
+    <published>2016-11-26T22:17:49.000Z</published>
+    <updated>2016-11-26T22:25:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Softwares"><a href="#Softwares" class="headerlink" title="Softwares"></a>Softwares</h1><ul>
+<li>iTerm 2</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Softwares&quot;&gt;&lt;a href=&quot;#Softwares&quot; class=&quot;headerlink&quot; title=&quot;Softwares&quot;&gt;&lt;/a&gt;Softwares&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;iTerm 2&lt;/li&gt;
+&lt;/ul&gt;
+
+    
+    </summary>
+    
+      <category term="Systems" scheme="http://hezx.github.io/categories/Systems/"/>
+    
+    
+      <category term="MacOS Config" scheme="http://hezx.github.io/tags/MacOS-Config/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Build a bolg with Hexo</title>
     <link href="http://hezx.github.io/2016/11/build-bolg-with-hexo/"/>
     <id>http://hezx.github.io/2016/11/build-bolg-with-hexo/</id>
     <published>2016-11-26T21:47:00.000Z</published>
-    <updated>2016-11-26T21:55:17.000Z</updated>
+    <updated>2016-11-26T22:17:25.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><ul>
 <li>Install Node.js (LTS v6.9.1)</li>
@@ -60,7 +88,7 @@
       <category term="Systems" scheme="http://hezx.github.io/categories/Systems/"/>
     
     
-      <category term="Hexo" scheme="http://hezx.github.io/tags/Hexo/"/>
+      <category term="Hexo NexT" scheme="http://hezx.github.io/tags/Hexo-NexT/"/>
     
   </entry>
   

@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[config mac]]></title>
+      <url>%2F2016%2F11%2Fconfig-mac%2F</url>
+      <content type="text"><![CDATA[Softwares iTerm 2]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Build a bolg with Hexo]]></title>
       <url>%2F2016%2F11%2Fbuild-bolg-with-hexo%2F</url>
       <content type="text"><![CDATA[Installation Install Node.js (LTS v6.9.1) Install Hexo (hexo-cli@1.0.2) 1sudo npm install -g hexo-cli Initialize and install a few userful plugins. 1234567891011121314hexo initnpm install hexo-generator-index --savenpm install hexo-generator-archive --savenpm install hexo-generator-category --savenpm install hexo-generator-tag --savenpm install hexo-server --savenpm install hexo-deployer-git --savenpm install hexo-deployer-heroku --savenpm install hexo-deployer-rsync --savenpm install hexo-deployer-openshift --savenpm install hexo-renderer-marked@0.2 --savenpm install hexo-renderer-stylus@0.2 --savenpm install hexo-generator-feed@1 --savenpm install hexo-generator-sitemap@1 --save ConfigurationDepoly to Github PagesEdit _config.yml file 1234deploy: type: git repository: git@github.com:hezx/hezx.github.io.git branch: master and use the following command to depoly the blog 1hexo deploy Create tags/categories pages1hexo new page tags 12345title: tagsdate: 2016-11-25 21:52:48type: "tags"comments: false--- 1hexo new page categories 12345title: categoriesdate: 2016-11-25 21:52:48type: "categories"comments: false--- ThemeDownload the Next theme 1git clone https://github.com/iissnan/hexo-theme-next next Change the theme line in _config.yml as 1theme: next Details about how to config the theme can be found here. TODO: Now I used Local Search, a better approach is to setup the Swiftype engine (see this). ​]]></content>
