@@ -423,40 +423,52 @@
 <td><code>⌘</code> + ⇧ + <code>Enter</code></td>
 </tr>
 <tr>
-<td>Previous Tab</td>
-<td><code>⌘</code> + <code>Left Arrow</code></td>
+<td>Previous/Next tab</td>
+<td><code>⌘</code> + <code>Left Arrow</code> / <code>Right Arrow</code></td>
 </tr>
 <tr>
-<td>Next Tab</td>
-<td><code>⌘</code> + <code>Right Arrow</code></td>
-</tr>
-<tr>
-<td>Go to Tab</td>
+<td>Go to tab</td>
 <td><code>⌘</code> + <code>Number</code></td>
 </tr>
 <tr>
-<td>Go to Window</td>
+<td>Go to window</td>
 <td><code>⌘</code> + <code>Option</code> + <code>Number</code></td>
 </tr>
 <tr>
-<td>Go to Split Pane by Order of Use</td>
+<td>Go to split pane by order of use</td>
 <td><code>⌘</code> + <code>]</code> , <code>⌘</code> + <code>[</code></td>
 </tr>
 <tr>
-<td>Split Window Horizontally (same profile)</td>
+<td>Split window horizontally (same profile)</td>
 <td><code>⌘</code> + <code>D</code></td>
 </tr>
 <tr>
-<td>Split Window Vertically (same profile)</td>
+<td>Split window vertically (same profile)</td>
 <td><code>⌘</code> + <code>d</code></td>
 </tr>
 <tr>
 <td>Close pane/window</td>
 <td><code>⌘</code> + <code>w</code></td>
 </tr>
+<tr>
+<td>Search (supports regular expression)</td>
+<td><code>⌘</code> + <code>f</code></td>
+</tr>
+<tr>
+<td>Auto-complete used command</td>
+<td><code>⌘</code> + <code>;</code></td>
+</tr>
+<tr>
+<td>Display all tabs and search</td>
+<td><code>⌘</code> + <code>Option</code> + <code>e</code></td>
+</tr>
+<tr>
+<td>Highlight mouse location</td>
+<td><code>⌘</code> + <code>/</code></td>
+</tr>
 </tbody>
 </table>
-<p>See <a href="https://gist.github.com/helger/3070258" target="_blank" rel="external">iTerm 2 cheatsheet</a> for more shortcuts.</p>
+<p>See <a href="https://gist.github.com/helger/3070258" target="_blank" rel="external">iTerm 2 cheatsheet</a> and <a href="https://www.zhihu.com/question/27447370/answer/58976209#" target="_blank" rel="external">iterm2有什么酷功能</a> for more shortcuts.</p>
 <h1 id="Zsh-and-On-My-Zsh"><a href="#Zsh-and-On-My-Zsh" class="headerlink" title="Zsh and On-My-Zsh"></a>Zsh and On-My-Zsh</h1><p>Run <code>brew install zsh</code> to install Zsh, then change the default shell to zsh:</p>
 <ul>
 <li>add line <em>/usr/local/bin/zsh</em> to file <em>/etc/shells</em></li>
@@ -469,6 +481,10 @@
 <li>set both the regular font and the non-ascii font to <em>Hack</em> in iTerm2</li>
 <li>download the theme, put the file <strong>bullet-train.zsh-theme</strong> in <strong>$ZSH_CUSTOM/themes/</strong>, then configure the theme in your <strong>~/.zshrc</strong> file <code>ZSH_THEME=&quot;bullet-train&quot;</code></li>
 </ul>
+<h2 id="Auto-completion"><a href="#Auto-completion" class="headerlink" title="Auto-completion"></a>Auto-completion</h2><p>Zsh can auto-complete file/folder path, commands, and arguments. For example,</p>
+<p><img src="/images/zsh_autocomplete.png" alt=""></p>
+<p>When the options popped up after the <code>tab</code>, hit the <code>tab</code> again and you will be in selection mode. Hit <code>tab</code> to next option, hit <code>Shift</code>+<code>tab</code> to previous option, and use <code>Control</code> + <code>f</code>/<code>b</code>/<code>p</code>/<code>n</code> to choose right/left/above/below option.</p>
+<p><img src="/images/zsh_autocomplete2.png" alt=""></p>
 <h2 id="Globbing"><a href="#Globbing" class="headerlink" title="Globbing"></a>Globbing</h2><p>Globbing means command line parameter expansion. For example <code>ls *.html</code>.  You can sort and filter by exclusion or inclusion on name, size, permission, owner, creation time, etc.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ls *(.)            # list just regular files</div><div class="line">ls *(/)            # list just directories</div><div class="line">ls -ld *(/om[1,3]) # Show three newest directories. &quot;om&quot; orders by modification. &quot;[1,3]&quot; works like Python slice.</div><div class="line">rm -i *(.L0)       # Remove zero length files, prompt for each file</div><div class="line">ls *(^m0)          # Files not modified today.</div><div class="line">subl **/main.py    # Edit main.py, wherever it is in this directory tree. ** is great.</div><div class="line">ls **/*(.x)        # List all executable files in this tree</div><div class="line">ls *~*.*(.)        # List all files that does not have a dot in the filename</div><div class="line">ls -l */**(Lk+100) # List all files larger than 100kb in this tree</div></pre></td></tr></table></figure>
 <h2 id="Global-aliases"><a href="#Global-aliases" class="headerlink" title="Global aliases"></a>Global aliases</h2><p>Global aliases are words that can be used anywhere on the command line, thus you can give certain files, filters or pipes a short name. Some examples:</p>
