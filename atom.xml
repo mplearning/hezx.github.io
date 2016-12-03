@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezx.github.io/"/>
-  <updated>2016-11-26T22:25:24.000Z</updated>
+  <updated>2016-12-03T07:03:48.000Z</updated>
   <id>http://hezx.github.io/</id>
   
   <author>
@@ -16,23 +16,103 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>config mac</title>
+    <title>Config the terminal on Mac OS</title>
     <link href="http://hezx.github.io/2016/11/config-mac/"/>
     <id>http://hezx.github.io/2016/11/config-mac/</id>
     <published>2016-11-26T22:17:49.000Z</published>
-    <updated>2016-11-26T22:25:24.000Z</updated>
+    <updated>2016-12-03T07:03:48.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Softwares"><a href="#Softwares" class="headerlink" title="Softwares"></a>Softwares</h1><ul>
-<li>iTerm 2</li>
+    <content type="html"><![CDATA[<h1 id="iTerm-2"><a href="#iTerm-2" class="headerlink" title="iTerm 2"></a>iTerm 2</h1><h2 id="Start-iTerm-at-login"><a href="#Start-iTerm-at-login" class="headerlink" title="Start iTerm at login"></a>Start iTerm at login</h2><ul>
+<li>Open your “System Preferences”</li>
+<li>Navigate to “Users and Groups”</li>
+<li>Select your “Login Items”</li>
+<li>Click the plus sign to add a new login item (check the box ‘hide’. This way you won’t see the window pop up in your face, but it will be open in the background.)</li>
+</ul>
+<h2 id="System-wide-hotkey-for-iTerm"><a href="#System-wide-hotkey-for-iTerm" class="headerlink" title="System wide hotkey for iTerm"></a>System wide hotkey for iTerm</h2><ul>
+<li>Navigate to the “Keys” settings page on iTerm preferences pane</li>
+<li>Set the hotkey “Show/hide iTerm2 with a system-wide hotkey” to whatever you want (eg Command+Control+T).</li>
+</ul>
+<h2 id="Keyboard-shortcut"><a href="#Keyboard-shortcut" class="headerlink" title="Keyboard shortcut"></a>Keyboard shortcut</h2><table>
+<thead>
+<tr>
+<th><strong>Function</strong></th>
+<th><strong>Shortcut</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Show/hide iTerm2</td>
+<td><code>⌘</code> + <code>Control</code> + <code>t</code></td>
+</tr>
+<tr>
+<td>Toggle in/out fullscreen</td>
+<td><code>⌘</code> + <code>Enter</code></td>
+</tr>
+<tr>
+<td>Maximize current panel</td>
+<td><code>⌘</code> + ⇧ + <code>Enter</code></td>
+</tr>
+<tr>
+<td>Previous Tab</td>
+<td><code>⌘</code> + <code>Left Arrow</code></td>
+</tr>
+<tr>
+<td>Next Tab</td>
+<td><code>⌘</code> + <code>Right Arrow</code></td>
+</tr>
+<tr>
+<td>Go to Tab</td>
+<td><code>⌘</code> + <code>Number</code></td>
+</tr>
+<tr>
+<td>Go to Window</td>
+<td><code>⌘</code> + <code>Option</code> + <code>Number</code></td>
+</tr>
+<tr>
+<td>Go to Split Pane by Order of Use</td>
+<td><code>⌘</code> + <code>]</code> , <code>⌘</code> + <code>[</code></td>
+</tr>
+<tr>
+<td>Split Window Horizontally (same profile)</td>
+<td><code>⌘</code> + <code>D</code></td>
+</tr>
+<tr>
+<td>Split Window Vertically (same profile)</td>
+<td><code>⌘</code> + <code>d</code></td>
+</tr>
+<tr>
+<td>Close pane/window</td>
+<td><code>⌘</code> + <code>w</code></td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="https://gist.github.com/helger/3070258" target="_blank" rel="external">iTerm 2 cheatsheet</a> for more shortcuts.</p>
+<h1 id="Zsh-and-On-My-Zsh"><a href="#Zsh-and-On-My-Zsh" class="headerlink" title="Zsh and On-My-Zsh"></a>Zsh and On-My-Zsh</h1><p>Run <code>brew install zsh</code> to install Zsh, then change the default shell to zsh:</p>
+<ul>
+<li>add <code>/usr/local/bin/zsh</code> to file <code>/etc/shells</code></li>
+<li>run <code>chsh -s /usr/local/bin/zsh</code></li>
+<li>then install oh-my-zsh</li>
+</ul>
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p>I used the theme called <a href="https://github.com/caiogondim/bullet-train-oh-my-zsh-theme" target="_blank" rel="external">Bullet Train</a>.</p>
+<ul>
+<li>install Powerline compatible fonts, <a href="https://github.com/Lokaltog/powerline-fonts" target="_blank" rel="external">Vim Powerline patched fonts</a></li>
+<li>set both the regular font and the non-ascii font to <code>Hack</code> in iTerm2</li>
+<li>download the theme, put the file <strong>bullet-train.zsh-theme</strong> in <strong>$ZSH_CUSTOM/themes/</strong>, then configure the theme in your <strong>~/.zshrc</strong> file <code>ZSH_THEME=&quot;bullet-train&quot;</code></li>
+</ul>
+<h2 id="Globbing"><a href="#Globbing" class="headerlink" title="Globbing"></a>Globbing</h2><p>Globbing means command line parameter expansion. For example <code>ls *.html</code>.  You can sort and filter by exclusion or inclusion on name, size, permission, owner, creation time, etc.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ls *(.)            # list just regular files</div><div class="line">ls *(/)            # list just directories</div><div class="line">ls -ld *(/om[1,3]) # Show three newest directories. &quot;om&quot; orders by modification. &quot;[1,3]&quot; works like Python slice.</div><div class="line">rm -i *(.L0)       # Remove zero length files, prompt for each file</div><div class="line">ls *(^m0)          # Files not modified today.</div><div class="line">subl **/main.py    # Edit main.py, wherever it is in this directory tree. ** is great.</div><div class="line">ls **/*(.x)        # List all executable files in this tree</div><div class="line">ls *~*.*(.)        # List all files that does not have a dot in the filename</div><div class="line">ls -l */**(Lk+100) # List all files larger than 100kb in this tree</div></pre></td></tr></table></figure>
+<h2 id="Global-aliases"><a href="#Global-aliases" class="headerlink" title="Global aliases"></a>Global aliases</h2><p>Global aliases are words that can be used anywhere on the command line, thus you can give certain files, filters or pipes a short name. Some examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias -g L=&quot;|less&quot; # Write L after a command to page through the output.</div><div class="line">alias -g TL=&apos;| tail -20&apos;</div><div class="line">alias -g NUL=&quot;&gt; /dev/null 2&gt;&amp;1&quot;</div></pre></td></tr></table></figure>
+<p>Zsh also has suffix aliases, which means that you can tie a file suffix, let’s say “pdf” to a command, for example xpdf. <code>alias -s pdf=xpdf</code> Now if you just type the name of a pdf file, it will be displayed with xpdf.</p>
+<h2 id="More-about-Zsh-or-Oh-My-Zsh"><a href="#More-about-Zsh-or-Oh-My-Zsh" class="headerlink" title="More about Zsh or Oh-My-Zsh"></a>More about Zsh or Oh-My-Zsh</h2><ul>
+<li>This <a href="http://reasoniamhere.com/2014/01/11/outrageously-useful-tips-to-master-your-z-shell/" target="_blank" rel="external">post</a> explains how powerful the oh-my-zsh is on <strong>file picking </strong> etc.</li>
+<li>This <a href="http://fendrich.se/blog/2012/09/28/no/" target="_blank" rel="external">post</a> lists the benefits from using Zsh instead of default Bash.</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Softwares&quot;&gt;&lt;a href=&quot;#Softwares&quot; class=&quot;headerlink&quot; title=&quot;Softwares&quot;&gt;&lt;/a&gt;Softwares&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;iTerm 2&lt;/li&gt;
-&lt;/ul&gt;
-
+      &lt;h1 id=&quot;iTerm-2&quot;&gt;&lt;a href=&quot;#iTerm-2&quot; class=&quot;headerlink&quot; title=&quot;iTerm 2&quot;&gt;&lt;/a&gt;iTerm 2&lt;/h1&gt;&lt;h2 id=&quot;Start-iTerm-at-login&quot;&gt;&lt;a href=&quot;#Start-iTerm-a
     
     </summary>
     
