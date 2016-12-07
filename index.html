@@ -289,6 +289,169 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://hezx.github.io/2016/12/jupyter-cheatsheet/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="hezx">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="hezx's notes">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="hezx's notes" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/jupyter-cheatsheet/" itemprop="url">
+                  Jupyter Cheatsheet
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-07T11:34:45-08:00">
+                2016-12-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/jupyter-cheatsheet/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/jupyter-cheatsheet/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h1><h1 id="Code-Import-Reuse"><a href="#Code-Import-Reuse" class="headerlink" title="Code Import/Reuse"></a>Code Import/Reuse</h1><p>Sometimes we want to reuse the functions or classes from other notebooks, or we want to put the utility / helper function into a different notebook to keep the working notebook readable. In both cases, we may need to import code (functions and classes) from another Jupyter notebook, and there are several ways to accomplish that.</p>
+<h2 id="Magic-function"><a href="#Magic-function" class="headerlink" title="Magic function"></a>Magic function</h2><p>The simple way is to use the magic function to execute the ipython scripts in a notebook. The option <code>-i</code> will make it run in IPython’s namespace and the variables defined interactively are also included. </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%run -i <span class="string">'notebook_with_shared_code.ipynb'</span></div></pre></td></tr></table></figure>
+<h2 id="ipynb-package"><a href="#ipynb-package" class="headerlink" title="ipynb package"></a><em>ipynb</em> package</h2><p>The <a href="https://github.com/ipython/ipynb" target="_blank" rel="external">package <em>ipynb</em></a> provides an easy way to explicitly import .pynb files the same way you would import regular .py file. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ipynb</div></pre></td></tr></table></figure>
+<ul>
+<li>Full import</li>
+</ul>
+<p>All the code in the .ipynb file is executed, and classes/functions/variables in the top level are available for use. If you have a notebook file named <em>server.ipynb</em>, you can import it via:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ipynb.fs.full.server</div><div class="line"><span class="keyword">from</span> ipynb.fs.full.server <span class="keyword">import</span> X, Y, X</div></pre></td></tr></table></figure>
+<ul>
+<li>Definitions only import</li>
+</ul>
+<p>you only want to import the functions / classes defined in it - and not the extra statements you have in there. This can be accomplished via </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> ipynb.fs.defs.server</div></pre></td></tr></table></figure>
+<p>It’ll only execute and make available the following parts of the code in <em>server.ipynb</em>:</p>
+<ul>
+<li><strong>class</strong> / <strong>function</strong> definitions</li>
+<li><strong>import</strong> statements</li>
+<li>Assignment statements where the variables being assigned to are ALL_CAPS (assumed to be constants).</li>
+</ul>
+<p>This skips most computational work and brings in your definitions only, making it easy to reuse functions / classes across similar analyses.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://hezx.github.io/2016/11/config-mac/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -491,7 +654,7 @@
 <ul>
 <li>install Powerline compatible fonts, <a href="https://github.com/Lokaltog/powerline-fonts" target="_blank" rel="external">Vim Powerline patched fonts</a></li>
 <li>set both the regular font and the non-ascii font to <em>Hack</em> in iTerm2</li>
-<li>download the theme, put the file <strong>bullet-train.zsh-theme</strong> in <strong>$ZSH_CUSTOM/themes/</strong>, then configure the theme in your <strong>~/.zshrc</strong> file <em>ZSH_THEME=”bullet-train”</em></li>
+<li>download the theme, put the file <em>bullet-train.zsh-theme</em> in <em>$ZSH_CUSTOM/themes/</em>, then configure the theme in your <em>~/.zshrc</em> file <em>ZSH_THEME=”bullet-train”</em></li>
 </ul>
 <h2 id="Auto-completion"><a href="#Auto-completion" class="headerlink" title="Auto-completion"></a>Auto-completion</h2><p>Zsh can auto-complete file/folder path, commands, and arguments. For example,</p>
 <p><img src="/images/zsh_autocomplete.png" alt=""></p>
@@ -749,7 +912,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -757,7 +920,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
@@ -766,7 +929,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
