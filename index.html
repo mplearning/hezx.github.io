@@ -392,7 +392,7 @@
       
         
           
-            <h1 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h1><p><img src="/images/jupyter_shortcuts.png" alt=""></p>
+            <h1 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h1><p><img src="/images/mac_keymap.png" alt=""></p>
 <h2 id="Command-Mode-press-Esc-to-enable"><a href="#Command-Mode-press-Esc-to-enable" class="headerlink" title="Command Mode (press Esc to enable)"></a>Command Mode (press <em>Esc</em> to enable)</h2><ul>
 <li>↩ : enter edit mode</li>
 <li>⌃↩ : run cell</li>
@@ -450,7 +450,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># shows how much time program spent in each function</span></div><div class="line">%prun some_useless_slow_function()</div></pre></td></tr></table></figure>
 <h1 id="Code-Import-Reuse"><a href="#Code-Import-Reuse" class="headerlink" title="Code Import/Reuse"></a>Code Import/Reuse</h1><p>Sometimes we want to reuse the functions or classes from other notebooks, or we want to put the utility / helper function into a different notebook to keep the working notebook readable. In both cases, we may need to import code (functions and classes) from another Jupyter notebook, and there are several ways to accomplish that.</p>
-<h2 id="Magic-function"><a href="#Magic-function" class="headerlink" title="Magic function"></a>Magic function</h2><p>The simple way is to use the magic function to execute the ipython scripts in a notebook. The option <code>-i</code> will make it run in IPython’s namespace and the variables defined interactively are also included. </p>
+<h2 id="Magic-function"><a href="#Magic-function" class="headerlink" title="Magic function"></a>Magic function</h2><p>The simple way is to use the magic function to execute the ipython scripts in a notebook. The option <em>-i</em> will make it run in IPython’s namespace and the variables defined interactively are also included. </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%run -i <span class="string">'notebook_with_shared_code.ipynb'</span></div></pre></td></tr></table></figure>
 <h2 id="ipynb-package-py3-only"><a href="#ipynb-package-py3-only" class="headerlink" title="ipynb package - py3 only"></a><em>ipynb</em> package - py3 only</h2><p>The <a href="https://github.com/ipython/ipynb" target="_blank" rel="external">package <em>ipynb</em></a> provides an easy way to explicitly import .pynb files the same way you would import regular .py file. However, this package depends on new machinery introduced in Python 3.4, so at<br>least for now there is no Python 2 support.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install ipynb</div></pre></td></tr></table></figure>
@@ -612,20 +612,7 @@
       
         
           
-            <h1 id="Key-Map-in-Mac-OS"><a href="#Key-Map-in-Mac-OS" class="headerlink" title="Key Map in Mac OS"></a>Key Map in Mac OS</h1><ul>
-<li>⌘ : Command key</li>
-<li>⌃ : Control key</li>
-<li>⌫ : Delete key</li>
-<li>⌥ : Option or Alt key</li>
-<li>⇧ : Shift key</li>
-<li>␣: Space</li>
-<li>⇥: Tab</li>
-<li>↩ : Return or Enter key</li>
-<li>← : Left arrow key</li>
-<li>→ : Right arrow key</li>
-<li>↑ : Up arrow key</li>
-<li>↓ : Down arrow key</li>
-</ul>
+            <p><img src="/images/mac_keymap.png" alt=""></p>
 <h1 id="iTerm-2"><a href="#iTerm-2" class="headerlink" title="iTerm 2"></a>iTerm 2</h1><h2 id="Start-iTerm-at-login"><a href="#Start-iTerm-at-login" class="headerlink" title="Start iTerm at login"></a>Start iTerm at login</h2><ul>
 <li>Open your “System Preferences”</li>
 <li>Navigate to “Users and Groups”</li>
