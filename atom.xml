@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezx.github.io/"/>
-  <updated>2016-12-08T07:43:52.000Z</updated>
+  <updated>2016-12-10T08:04:36.000Z</updated>
   <id>http://hezx.github.io/</id>
   
   <author>
@@ -20,9 +20,65 @@
     <link href="http://hezx.github.io/2016/12/jupyter-cheatsheet/"/>
     <id>http://hezx.github.io/2016/12/jupyter-cheatsheet/</id>
     <published>2016-12-07T19:34:45.000Z</published>
-    <updated>2016-12-08T07:43:52.000Z</updated>
+    <updated>2016-12-10T08:04:36.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h1><p><img src="/images/jupyter_shortcuts.png" alt=""></p>
+<h2 id="Command-Mode-press-Esc-to-enable"><a href="#Command-Mode-press-Esc-to-enable" class="headerlink" title="Command Mode (press Esc to enable)"></a>Command Mode (press <em>Esc</em> to enable)</h2><ul>
+<li>↩ : enter edit mode</li>
+<li>⌃↩ : run cell</li>
+<li>⇧↩ : run cell, select below</li>
+<li>⌥↩ : run cell, insert below</li>
+<li>y : to code</li>
+<li>m : to markdown</li>
+<li>r : to raw</li>
+<li>1/2/3 : to heading 1/2/3…</li>
+<li>↑/↓ : select cell above/below</li>
+<li>⇧↑/⇧↓ : select multiple cell above/below</li>
+<li>a/b : insert cell above/below</li>
+<li>x/c : cut/copy selected cell</li>
+<li>v : paste cell below</li>
+<li>⇧v : paste cell above</li>
+<li>z : undo last cell deletion</li>
+<li>dd : delete selected cell</li>
+<li>⇧m : merge cell below or merge selected cells</li>
+<li>⌘s : Save and Checkpoint</li>
+<li>l : toggle line numbers</li>
+<li>o : toggle output</li>
+<li>⇧o : toggle output scrolling</li>
+<li>f : find and replace on the code</li>
+<li>ii/00 : interrupt/restart kernel</li>
+<li>␣/⇧␣ : scroll down/up</li>
+</ul>
+<h2 id="Edit-Mode-press-↩-to-enable"><a href="#Edit-Mode-press-↩-to-enable" class="headerlink" title="Edit Mode (press ↩ to enable)"></a>Edit Mode (press ↩ to enable)</h2><ul>
+<li>⇥ : code completion or indent</li>
+<li>⇧⇥ : tooltip</li>
+<li>⌘]/⌘[: indent/dedent</li>
+<li>⌘a : select all</li>
+<li>⌘z : undo</li>
+<li>⌘⇧z : redo</li>
+<li>⌘↑/⌘↓ : go to cell start/end</li>
+<li>⌥←/⌥→ : go one word left/right</li>
+<li>⌥⌫/⌥⌦ : delete word before/after</li>
+<li>⌃⇧- : split cell</li>
+</ul>
+<p>Another way to access keyboard shortcuts is to use the command palette: ⌘⇧p. This dialog box helps you run any command by name - useful if you don’t know the keyboard shortcut for an action or if what you want to do does not have a keyboard shortcut.</p>
+<h1 id="Plotting-in-Notebook"><a href="#Plotting-in-Notebook" class="headerlink" title="Plotting in Notebook"></a>Plotting in Notebook</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line"></div><div class="line">%matplotlib inline</div><div class="line">sns.set_style(<span class="string">"white"</span>)</div><div class="line"></div><div class="line"><span class="comment"># double resolution plot display for Retina screens</span></div><div class="line">%config InlineBackend.figure_format = <span class="string">'retina'</span></div><div class="line"></div><div class="line"><span class="comment"># change display image size</span></div><div class="line">plt.rcParams[<span class="string">"figure.figsize"</span>] = (<span class="number">12</span>,<span class="number">9</span>)</div></pre></td></tr></table></figure>
+<h1 id="Magics"><a href="#Magics" class="headerlink" title="Magics"></a>Magics</h1><ul>
+<li>List all available jupyter magic commands</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%lsmagic</div></pre></td></tr></table></figure>
+<ul>
+<li>Executing shell commands</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">!pip install numpy</div><div class="line">!pip list | grep numpy</div></pre></td></tr></table></figure>
+<ul>
+<li>Suppress output</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># if you don't put semicolon at the end, you'll have output printed</span></div><div class="line">plt.hist(numpy.linspace(<span class="number">0</span>, <span class="number">1</span>, <span class="number">1000</span>)**<span class="number">1.5</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>Profilling</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># shows how much time program spent in each function</span></div><div class="line">%prun some_useless_slow_function()</div></pre></td></tr></table></figure>
 <h1 id="Code-Import-Reuse"><a href="#Code-Import-Reuse" class="headerlink" title="Code Import/Reuse"></a>Code Import/Reuse</h1><p>Sometimes we want to reuse the functions or classes from other notebooks, or we want to put the utility / helper function into a different notebook to keep the working notebook readable. In both cases, we may need to import code (functions and classes) from another Jupyter notebook, and there are several ways to accomplish that.</p>
 <h2 id="Magic-function"><a href="#Magic-function" class="headerlink" title="Magic function"></a>Magic function</h2><p>The simple way is to use the magic function to execute the ipython scripts in a notebook. The option <code>-i</code> will make it run in IPython’s namespace and the variables defined interactively are also included. </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%run -i <span class="string">'notebook_with_shared_code.ipynb'</span></div></pre></td></tr></table></figure>
@@ -67,7 +123,7 @@
     <link href="http://hezx.github.io/2016/11/config-mac/"/>
     <id>http://hezx.github.io/2016/11/config-mac/</id>
     <published>2016-11-26T22:17:49.000Z</published>
-    <updated>2016-12-04T16:59:47.000Z</updated>
+    <updated>2016-12-10T07:40:52.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Key-Map-in-Mac-OS"><a href="#Key-Map-in-Mac-OS" class="headerlink" title="Key Map in Mac OS"></a>Key Map in Mac OS</h1><ul>
 <li>⌘ : Command key</li>
@@ -75,6 +131,8 @@
 <li>⌫ : Delete key</li>
 <li>⌥ : Option or Alt key</li>
 <li>⇧ : Shift key</li>
+<li>␣: Space</li>
+<li>⇥: Tab</li>
 <li>↩ : Return or Enter key</li>
 <li>← : Left arrow key</li>
 <li>→ : Right arrow key</li>
@@ -172,12 +230,12 @@
 </ul>
 <h2 id="Auto-completion"><a href="#Auto-completion" class="headerlink" title="Auto-completion"></a>Auto-completion</h2><p>Zsh can auto-complete file/folder path, commands, and arguments. For example,</p>
 <p><img src="/images/zsh_autocomplete.png" alt=""></p>
-<p>When the options popped up after the <em>tab</em>, hit the <em>tab</em> again and you will be in selection mode. Hit <em>tab</em> to next option, hit ⇧+tab to previous option, and use ⌃ + f/b/p/n to choose right/left/above/below option.</p>
+<p>When the options popped up after the ⇥, hit the ⇥ again and you will be in selection mode. Hit ⇥ to next option, hit ⇧+⇥ to previous option, and use ⌃ + f/b/p/n to choose right/left/above/below option.</p>
 <p><img src="/images/zsh_autocomplete2.png" alt=""></p>
 <h2 id="Globbing"><a href="#Globbing" class="headerlink" title="Globbing"></a>Globbing</h2><p>Globbing means command line parameter expansion. For example <code>ls *.html</code>.  You can sort and filter by exclusion or inclusion on name, size, permission, owner, creation time, etc.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ls *(.)            # list just regular files</div><div class="line">ls *(/)            # list just directories</div><div class="line">ls -ld *(/om[1,3]) # Show three newest directories. &quot;om&quot; orders by modification. &quot;[1,3]&quot; works like Python slice.</div><div class="line">rm -i *(.L0)       # Remove zero length files, prompt for each file</div><div class="line">ls *(^m0)          # Files not modified today.</div><div class="line">subl **/main.py    # Edit main.py, wherever it is in this directory tree. ** is great.</div><div class="line">ls **/*(.x)        # List all executable files in this tree</div><div class="line">ls *~*.*(.)        # List all files that does not have a dot in the filename</div><div class="line">ls -l */**(Lk+100) # List all files larger than 100kb in this tree</div></pre></td></tr></table></figure>
 <h2 id="Global-aliases"><a href="#Global-aliases" class="headerlink" title="Global aliases"></a>Global aliases</h2><p>Global aliases are words that can be used anywhere on the command line, thus you can give certain files, filters or pipes a short name. Some examples:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alias -g L=&quot;|less&quot; # Write L after a command to page through the output.</div><div class="line">alias -g TL=&apos;| tail -20&apos;</div><div class="line">alias -g NUL=&quot;&gt; /dev/null 2&gt;&amp;1&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias -g NUL=&quot;&gt; /dev/null 2&gt;&amp;1&quot;</div></pre></td></tr></table></figure>
 <p>Zsh also has suffix aliases, which means that you can tie a file suffix, let’s say “pdf” to a command, for example xpdf. <code>alias -s pdf=xpdf</code> Now if you just type the name of a pdf file, it will be displayed with xpdf.</p>
 <h2 id="Jump"><a href="#Jump" class="headerlink" title="Jump"></a>Jump</h2><p>In Zsh, you can jump to a folder by simply typing in the folder path without the prefix <code>cd</code>, eg <code>..</code> is the same as <code>cd ../</code> Command <code>d</code> will list all folders you have visited in this session, and input the corresponding number can jump to that folder.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ d</div><div class="line">0	~/Dropbox/Websites/hezx.github.io</div><div class="line">1	~/Dropbox/Websites/hezx.github.io/source/_posts</div><div class="line">2	~/Dropbox/Websites/hezx.github.io/source/images</div><div class="line">3	~/Dropbox/Websites/hezx.github.io/source</div><div class="line">4	~</div><div class="line"></div><div class="line">$ 2</div><div class="line">~/Dropbox/Websites/hezx.github.io/source/images</div></pre></td></tr></table></figure>

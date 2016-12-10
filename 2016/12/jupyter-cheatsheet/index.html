@@ -105,19 +105,43 @@
 
 
 <meta name="description" content="Keyboard Shortcuts
-Code Import/ReuseSometimes we want to reuse the functions or classes from other notebooks, or we want to put the utility / helper function into a different notebook to keep the work">
+Command Mode (press Esc to enable)
+↩ : enter edit mode
+⌃↩ : run cell
+⇧↩ : run cell, select below
+⌥↩ : run cell, insert below
+y : to code
+m : to markdown
+r : to raw
+1/2/3 : to headin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jupyter Cheatsheet">
 <meta property="og:url" content="http://hezx.github.io/2016/12/jupyter-cheatsheet/index.html">
 <meta property="og:site_name" content="hezx's notes">
 <meta property="og:description" content="Keyboard Shortcuts
-Code Import/ReuseSometimes we want to reuse the functions or classes from other notebooks, or we want to put the utility / helper function into a different notebook to keep the work">
+Command Mode (press Esc to enable)
+↩ : enter edit mode
+⌃↩ : run cell
+⇧↩ : run cell, select below
+⌥↩ : run cell, insert below
+y : to code
+m : to markdown
+r : to raw
+1/2/3 : to headin">
 <meta property="og:image" content="http://hezx.github.io/images/jupyter_shortcuts.png">
-<meta property="og:updated_time" content="2016-12-08T07:43:52.000Z">
+<meta property="og:updated_time" content="2016-12-10T08:04:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jupyter Cheatsheet">
 <meta name="twitter:description" content="Keyboard Shortcuts
-Code Import/ReuseSometimes we want to reuse the functions or classes from other notebooks, or we want to put the utility / helper function into a different notebook to keep the work">
+Command Mode (press Esc to enable)
+↩ : enter edit mode
+⌃↩ : run cell
+⇧↩ : run cell, select below
+⌥↩ : run cell, insert below
+y : to code
+m : to markdown
+r : to raw
+1/2/3 : to headin">
 <meta name="twitter:image" content="http://hezx.github.io/images/jupyter_shortcuts.png">
 
 
@@ -395,6 +419,62 @@ Code Import/ReuseSometimes we want to reuse the functions or classes from other 
 
       
         <h1 id="Keyboard-Shortcuts"><a href="#Keyboard-Shortcuts" class="headerlink" title="Keyboard Shortcuts"></a>Keyboard Shortcuts</h1><p><img src="/images/jupyter_shortcuts.png" alt=""></p>
+<h2 id="Command-Mode-press-Esc-to-enable"><a href="#Command-Mode-press-Esc-to-enable" class="headerlink" title="Command Mode (press Esc to enable)"></a>Command Mode (press <em>Esc</em> to enable)</h2><ul>
+<li>↩ : enter edit mode</li>
+<li>⌃↩ : run cell</li>
+<li>⇧↩ : run cell, select below</li>
+<li>⌥↩ : run cell, insert below</li>
+<li>y : to code</li>
+<li>m : to markdown</li>
+<li>r : to raw</li>
+<li>1/2/3 : to heading 1/2/3…</li>
+<li>↑/↓ : select cell above/below</li>
+<li>⇧↑/⇧↓ : select multiple cell above/below</li>
+<li>a/b : insert cell above/below</li>
+<li>x/c : cut/copy selected cell</li>
+<li>v : paste cell below</li>
+<li>⇧v : paste cell above</li>
+<li>z : undo last cell deletion</li>
+<li>dd : delete selected cell</li>
+<li>⇧m : merge cell below or merge selected cells</li>
+<li>⌘s : Save and Checkpoint</li>
+<li>l : toggle line numbers</li>
+<li>o : toggle output</li>
+<li>⇧o : toggle output scrolling</li>
+<li>f : find and replace on the code</li>
+<li>ii/00 : interrupt/restart kernel</li>
+<li>␣/⇧␣ : scroll down/up</li>
+</ul>
+<h2 id="Edit-Mode-press-↩-to-enable"><a href="#Edit-Mode-press-↩-to-enable" class="headerlink" title="Edit Mode (press ↩ to enable)"></a>Edit Mode (press ↩ to enable)</h2><ul>
+<li>⇥ : code completion or indent</li>
+<li>⇧⇥ : tooltip</li>
+<li>⌘]/⌘[: indent/dedent</li>
+<li>⌘a : select all</li>
+<li>⌘z : undo</li>
+<li>⌘⇧z : redo</li>
+<li>⌘↑/⌘↓ : go to cell start/end</li>
+<li>⌥←/⌥→ : go one word left/right</li>
+<li>⌥⌫/⌥⌦ : delete word before/after</li>
+<li>⌃⇧- : split cell</li>
+</ul>
+<p>Another way to access keyboard shortcuts is to use the command palette: ⌘⇧p. This dialog box helps you run any command by name - useful if you don’t know the keyboard shortcut for an action or if what you want to do does not have a keyboard shortcut.</p>
+<h1 id="Plotting-in-Notebook"><a href="#Plotting-in-Notebook" class="headerlink" title="Plotting in Notebook"></a>Plotting in Notebook</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</div><div class="line"></div><div class="line">%matplotlib inline</div><div class="line">sns.set_style(<span class="string">"white"</span>)</div><div class="line"></div><div class="line"><span class="comment"># double resolution plot display for Retina screens</span></div><div class="line">%config InlineBackend.figure_format = <span class="string">'retina'</span></div><div class="line"></div><div class="line"><span class="comment"># change display image size</span></div><div class="line">plt.rcParams[<span class="string">"figure.figsize"</span>] = (<span class="number">12</span>,<span class="number">9</span>)</div></pre></td></tr></table></figure>
+<h1 id="Magics"><a href="#Magics" class="headerlink" title="Magics"></a>Magics</h1><ul>
+<li>List all available jupyter magic commands</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%lsmagic</div></pre></td></tr></table></figure>
+<ul>
+<li>Executing shell commands</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">!pip install numpy</div><div class="line">!pip list | grep numpy</div></pre></td></tr></table></figure>
+<ul>
+<li>Suppress output</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># if you don't put semicolon at the end, you'll have output printed</span></div><div class="line">plt.hist(numpy.linspace(<span class="number">0</span>, <span class="number">1</span>, <span class="number">1000</span>)**<span class="number">1.5</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>Profilling</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># shows how much time program spent in each function</span></div><div class="line">%prun some_useless_slow_function()</div></pre></td></tr></table></figure>
 <h1 id="Code-Import-Reuse"><a href="#Code-Import-Reuse" class="headerlink" title="Code Import/Reuse"></a>Code Import/Reuse</h1><p>Sometimes we want to reuse the functions or classes from other notebooks, or we want to put the utility / helper function into a different notebook to keep the working notebook readable. In both cases, we may need to import code (functions and classes) from another Jupyter notebook, and there are several ways to accomplish that.</p>
 <h2 id="Magic-function"><a href="#Magic-function" class="headerlink" title="Magic function"></a>Magic function</h2><p>The simple way is to use the magic function to execute the ipython scripts in a notebook. The option <code>-i</code> will make it run in IPython’s namespace and the variables defined interactively are also included. </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">%run -i <span class="string">'notebook_with_shared_code.ipynb'</span></div></pre></td></tr></table></figure>
@@ -604,7 +684,7 @@ Code Import/ReuseSometimes we want to reuse the functions or classes from other 
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Keyboard-Shortcuts"><span class="nav-number">1.</span> <span class="nav-text">Keyboard Shortcuts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code-Import-Reuse"><span class="nav-number">2.</span> <span class="nav-text">Code Import/Reuse</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Magic-function"><span class="nav-number">2.1.</span> <span class="nav-text">Magic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ipynb-package-py3-only"><span class="nav-number">2.2.</span> <span class="nav-text">ipynb package - py3 only</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Keyboard-Shortcuts"><span class="nav-number">1.</span> <span class="nav-text">Keyboard Shortcuts</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Command-Mode-press-Esc-to-enable"><span class="nav-number">1.1.</span> <span class="nav-text">Command Mode (press Esc to enable)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Edit-Mode-press-↩-to-enable"><span class="nav-number">1.2.</span> <span class="nav-text">Edit Mode (press ↩ to enable)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Plotting-in-Notebook"><span class="nav-number">2.</span> <span class="nav-text">Plotting in Notebook</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Magics"><span class="nav-number">3.</span> <span class="nav-text">Magics</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code-Import-Reuse"><span class="nav-number">4.</span> <span class="nav-text">Code Import/Reuse</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Magic-function"><span class="nav-number">4.1.</span> <span class="nav-text">Magic function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ipynb-package-py3-only"><span class="nav-number">4.2.</span> <span class="nav-text">ipynb package - py3 only</span></a></li></ol></li></ol></div>
             
 
           </div>
