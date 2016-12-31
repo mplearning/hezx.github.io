@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hezx.github.io/2016/12/intro-to-docker/</loc>
+    
+    <lastmod>2016-12-31T07:23:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hezx.github.io/2016/11/config-mac/</loc>
     
-    <lastmod>2016-12-10T08:07:20.000Z</lastmod>
+    <lastmod>2016-12-31T06:53:02.000Z</lastmod>
     
   </url>
   
@@ -18,7 +25,7 @@
   <url>
     <loc>http://hezx.github.io/2016/11/build-bolg-with-hexo/</loc>
     
-    <lastmod>2016-11-27T03:51:30.000Z</lastmod>
+    <lastmod>2016-12-03T17:47:44.000Z</lastmod>
     
   </url>
   
