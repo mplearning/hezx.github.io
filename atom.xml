@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezx.github.io/"/>
-  <updated>2016-12-31T07:23:02.000Z</updated>
+  <updated>2016-12-31T07:57:11.000Z</updated>
   <id>http://hezx.github.io/</id>
   
   <author>
@@ -16,11 +16,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Introduction to Docker</title>
+    <title>Docker Fundamentals</title>
+    <link href="http://hezx.github.io/2016/12/docker-fundamentals/"/>
+    <id>http://hezx.github.io/2016/12/docker-fundamentals/</id>
+    <published>2016-12-31T07:26:34.000Z</published>
+    <updated>2016-12-31T07:57:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Building-Images"><a href="#Building-Images" class="headerlink" title="Building Images"></a>Building Images</h1><h2 id="Image-layers"><a href="#Image-layers" class="headerlink" title="Image layers"></a>Image layers</h2><p><img src="/images/docker/fund1.png" alt=""></p>
+<h2 id="Container-writable-layer"><a href="#Container-writable-layer" class="headerlink" title="Container writable layer"></a>Container writable layer</h2><p><img src="/images/docker/fund2.png" alt=""></p>
+<h2 id="Docker-commit"><a href="#Docker-commit" class="headerlink" title="Docker commit"></a>Docker commit</h2><p><img src="/images/docker/fund3.png" alt=""></p>
+<h1 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h1><p><img src="/images/docker/fund4.png" alt=""></p>
+<h2 id="Dockerfile-instructions"><a href="#Dockerfile-instructions" class="headerlink" title="Dockerfile instructions"></a>Dockerfile instructions</h2><p><img src="/images/docker/fund5.png" alt=""></p>
+<p><img src="/images/docker/fund6.png" alt=""></p>
+<h2 id="Docker-build"><a href="#Docker-build" class="headerlink" title="Docker build"></a>Docker build</h2><p><img src="/images/docker/fund7.png" alt=""></p>
+<h2 id="CMD-instructions"><a href="#CMD-instructions" class="headerlink" title="CMD instructions"></a>CMD instructions</h2><p><img src="/images/docker/fund8.png" alt=""></p>
+<h2 id="ENTRYPOINT-instructions"><a href="#ENTRYPOINT-instructions" class="headerlink" title="ENTRYPOINT instructions"></a>ENTRYPOINT instructions</h2><p><img src="/images/docker/fund9.png" alt=""></p>
+<h1 id="Managing-Images-and-Containers"><a href="#Managing-Images-and-Containers" class="headerlink" title="Managing Images and Containers"></a>Managing Images and Containers</h1><h2 id="Start-and-stop-container"><a href="#Start-and-stop-container" class="headerlink" title="Start and stop container"></a>Start and stop container</h2><p><img src="/images/docker/fund10.png" alt=""></p>
+<h2 id="Getting-terminal-access"><a href="#Getting-terminal-access" class="headerlink" title="Getting terminal access"></a>Getting terminal access</h2><p><img src="/images/docker/fund11.png" alt=""></p>
+<h2 id="Deleting-container"><a href="#Deleting-container" class="headerlink" title="Deleting container"></a>Deleting container</h2><p><img src="/images/docker/fund12.png" alt=""></p>
+<h2 id="Deleting-local-image"><a href="#Deleting-local-image" class="headerlink" title="Deleting local image"></a>Deleting local image</h2><p><img src="/images/docker/fund13.png" alt=""></p>
+<h1 id="Distributing-Images-on-Docker-Hub"><a href="#Distributing-Images-on-Docker-Hub" class="headerlink" title="Distributing Images on Docker Hub"></a>Distributing Images on Docker Hub</h1><h2 id="Docker-Hub-repositories"><a href="#Docker-Hub-repositories" class="headerlink" title="Docker Hub repositories"></a>Docker Hub repositories</h2><p><img src="/images/docker/fund14.png" alt=""></p>
+<h2 id="Pushing-images-to-Docker-Hub"><a href="#Pushing-images-to-Docker-Hub" class="headerlink" title="Pushing images to Docker Hub"></a>Pushing images to Docker Hub</h2><p><img src="/images/docker/fund15.png" alt=""></p>
+<h2 id="Tagging-images"><a href="#Tagging-images" class="headerlink" title="Tagging images"></a>Tagging images</h2><p><img src="/images/docker/fund16.png" alt=""></p>
+<h1 id="Docker-Volumes"><a href="#Docker-Volumes" class="headerlink" title="Docker Volumes"></a>Docker Volumes</h1><p><img src="/images/docker/fund17.png" alt=""></p>
+<h2 id="Mount-a-volume"><a href="#Mount-a-volume" class="headerlink" title="Mount a volume"></a>Mount a volume</h2><p><img src="/images/docker/fund18.png" alt=""></p>
+<h2 id="Volume-in-Dockerfile"><a href="#Volume-in-Dockerfile" class="headerlink" title="Volume in Dockerfile"></a>Volume in Dockerfile</h2><p><img src="/images/docker/fund19.png" alt=""></p>
+<h2 id="Uses-of-volumes"><a href="#Uses-of-volumes" class="headerlink" title="Uses of volumes"></a>Uses of volumes</h2><p><img src="/images/docker/fund20.png" alt=""></p>
+<h1 id="Basic-Docker-Networking"><a href="#Basic-Docker-Networking" class="headerlink" title="Basic Docker Networking"></a>Basic Docker Networking</h1><h2 id="Mapping-ports"><a href="#Mapping-ports" class="headerlink" title="Mapping ports"></a>Mapping ports</h2><p><img src="/images/docker/fund21.png" alt=""></p>
+<h2 id="Automapping-ports"><a href="#Automapping-ports" class="headerlink" title="Automapping ports"></a>Automapping ports</h2><p><img src="/images/docker/fund22.png" alt=""></p>
+<h3 id="EXPOSE-instruction"><a href="#EXPOSE-instruction" class="headerlink" title="EXPOSE instruction"></a>EXPOSE instruction</h3><p><img src="/images/docker/fund23.png" alt=""></p>
+<h2 id="Linking-containers"><a href="#Linking-containers" class="headerlink" title="Linking containers"></a>Linking containers</h2><p><img src="/images/docker/fund24.png" alt=""></p>
+<h3 id="Creating-a-link"><a href="#Creating-a-link" class="headerlink" title="Creating a link"></a>Creating a link</h3><p><img src="/images/docker/fund25.png" alt=""></p>
+<h3 id="Uses-of-linking"><a href="#Uses-of-linking" class="headerlink" title="Uses of linking"></a>Uses of linking</h3><p><img src="/images/docker/fund26.png" alt=""></p>
+<h1 id="Docker-in-Continuous-Integration"><a href="#Docker-in-Continuous-Integration" class="headerlink" title="Docker in Continuous Integration"></a>Docker in Continuous Integration</h1><h2 id="Traditional-continuous-integration"><a href="#Traditional-continuous-integration" class="headerlink" title="Traditional continuous integration"></a>Traditional continuous integration</h2><p><img src="/images/docker/fund27.png" alt=""></p>
+<h2 id="Using-Docker-in-continuous-integration"><a href="#Using-Docker-in-continuous-integration" class="headerlink" title="Using Docker in continuous integration"></a>Using Docker in continuous integration</h2><p><img src="/images/docker/fund28.png" alt=""></p>
+<h2 id="Docker-Hub-Auto-Build"><a href="#Docker-Hub-Auto-Build" class="headerlink" title="Docker Hub Auto Build"></a>Docker Hub Auto Build</h2><p><img src="/images/docker/fund29.png" alt=""></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.docker.com/products/docker-toolbox" target="_blank" rel="external">Docker Fundamentals</a> by Johnny Tu.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Building-Images&quot;&gt;&lt;a href=&quot;#Building-Images&quot; class=&quot;headerlink&quot; title=&quot;Building Images&quot;&gt;&lt;/a&gt;Building Images&lt;/h1&gt;&lt;h2 id=&quot;Image-layers&quot;
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hezx.github.io/categories/Docker/"/>
+    
+    
+      <category term="docker" scheme="http://hezx.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Introduction to Docker Concepts and Terms</title>
     <link href="http://hezx.github.io/2016/12/intro-to-docker/"/>
     <id>http://hezx.github.io/2016/12/intro-to-docker/</id>
     <published>2016-12-31T06:49:33.000Z</published>
-    <updated>2016-12-31T07:23:02.000Z</updated>
+    <updated>2016-12-31T07:27:17.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="What-is-Docker"><a href="#What-is-Docker" class="headerlink" title="What is Docker?"></a>What is Docker?</h1><p>Docker is a platform for developing, shipping and running applications using container virtualization technology. </p>
 <h2 id="History-lesson"><a href="#History-lesson" class="headerlink" title="History lesson"></a>History lesson</h2><p><img src="/images/docker/intro1.png" alt=""></p>
@@ -40,6 +92,7 @@
 <h2 id="Container-ID"><a href="#Container-ID" class="headerlink" title="Container ID"></a>Container ID</h2><p><img src="/images/docker/intro15.png" alt=""></p>
 <h2 id="Find-your-containers"><a href="#Find-your-containers" class="headerlink" title="Find your containers"></a>Find your containers</h2><p><img src="/images/docker/intro16.png" alt=""></p>
 <h2 id="Funning-in-detached-mode"><a href="#Funning-in-detached-mode" class="headerlink" title="Funning in detached mode"></a>Funning in detached mode</h2><p><img src="/images/docker/intro17.png" alt=""></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.docker.com/products/docker-toolbox" target="_blank" rel="external">Introduction to Docker</a> by Johnny Tu.</p>
 ]]></content>
     
     <summary type="html">

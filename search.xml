@@ -3,9 +3,16 @@
   
     
     <entry>
-      <title><![CDATA[Introduction to Docker]]></title>
+      <title><![CDATA[Docker Fundamentals]]></title>
+      <url>%2F2016%2F12%2Fdocker-fundamentals%2F</url>
+      <content type="text"><![CDATA[Building ImagesImage layers Container writable layer Docker commit Dockerfile Dockerfile instructions Docker build CMD instructions ENTRYPOINT instructions Managing Images and ContainersStart and stop container Getting terminal access Deleting container Deleting local image Distributing Images on Docker HubDocker Hub repositories Pushing images to Docker Hub Tagging images Docker Volumes Mount a volume Volume in Dockerfile Uses of volumes Basic Docker NetworkingMapping ports Automapping ports EXPOSE instruction Linking containers Creating a link Uses of linking Docker in Continuous IntegrationTraditional continuous integration Using Docker in continuous integration Docker Hub Auto Build ReferenceDocker Fundamentals by Johnny Tu.]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Introduction to Docker Concepts and Terms]]></title>
       <url>%2F2016%2F12%2Fintro-to-docker%2F</url>
-      <content type="text"><![CDATA[What is Docker?Docker is a platform for developing, shipping and running applications using container virtualization technology. History lesson Container Concepts and Terms Client and Daemon Container and Image Registry and Repository Docker ImageDisplay local images Image tags Docker ContainerCreating a container Container with terminal Container processes Container ID Find your containers Funning in detached mode]]></content>
+      <content type="text"><![CDATA[What is Docker?Docker is a platform for developing, shipping and running applications using container virtualization technology. History lesson Container Concepts and Terms Client and Daemon Container and Image Registry and Repository Docker ImageDisplay local images Image tags Docker ContainerCreating a container Container with terminal Container processes Container ID Find your containers Funning in detached mode ReferenceIntroduction to Docker by Johnny Tu.]]></content>
     </entry>
 
     
