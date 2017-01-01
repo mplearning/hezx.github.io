@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezx.github.io/"/>
-  <updated>2016-12-31T07:57:11.000Z</updated>
+  <updated>2017-01-01T07:19:44.000Z</updated>
   <id>http://hezx.github.io/</id>
   
   <author>
@@ -14,6 +14,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Docker in Depth (中文)</title>
+    <link href="http://hezx.github.io/2016/12/docker-in-depth/"/>
+    <id>http://hezx.github.io/2016/12/docker-in-depth/</id>
+    <published>2017-01-01T07:05:56.000Z</published>
+    <updated>2017-01-01T07:19:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="容器的概念"><a href="#容器的概念" class="headerlink" title="容器的概念"></a>容器的概念</h1><p>一般来说，虚拟机都会有自己的kernel，自己的硬件，这样虚拟机启动的时候需要先做开机自检，启动kernel，启动用户进程等一系列行为，虽然现在电脑运行速度挺快，但是这一系列检查做下来，也要几十秒，也就是虚拟机需要几十秒来启动。</p>
+<ul>
+<li>重新来理解虚拟机的概念，计算机科学家发现其实我们创建虚拟机也不一定需要模拟硬件的输入和输出，假如宿主机和虚拟机他们的kernel是一致的，就不用做硬件输入输出的搬运工了，只需要做kernel输入输出的搬运工即可，为了有别于硬件层面的虚拟机，这种虚拟机被命名为 操作系统层虚拟化，也被叫做<strong>容器</strong></li>
+<li>在虚拟机的系统中，虚拟机认为自己有独立的文件系统，进程系统，内存系统，等等一系列，所以为了让容器接近虚拟机，也需要有独立的文件系统，进程系统，内存系统，等等一系列，为了达成这一目的，主机系统采用的办法是：只要隔离容器不让它看到主机的文件系统，进程系统，内存系统，等等一系列，那么容器系统就是一个接近虚拟机的玩意了</li>
+</ul>
+<h1 id="进程隔离"><a href="#进程隔离" class="headerlink" title="进程隔离"></a>进程隔离</h1><p>linux实现进程的方法为fork，实现的方式分为两个步骤：</p>
+<ol>
+<li>在内存中复制一个父进程，得到“子进程”，此时子进程就是父进程上下文的简单克隆，内容完全一致</li>
+<li>设置子进程的 pid，parent_pid，以及其他和父进程不一致的内容</li>
+</ol>
+<p>从进程被制造的步骤可以看出，进程大部分资源和父进程共享，如果需要制造一个看起来像虚拟机的进程，我们需要比普通的进程多做几步。</p>
+<ul>
+<li>可以自定义rootfs，比如我们把整个ubuntu发行版的可执行文件以及其他文件系统都放在目录/home/admin/ubuntu/ 下，当我们重定义rootfs = /home/admin/ubuntu 后，则该文件地址被印射为 “/“</li>
+<li>把自身pid 印射为0，并看不到其他任何的pid，这样自身的pid成为系统内唯一存在pid，看起来就像新启动了系统</li>
+<li>用户名隔离，可以把用户名设置为“root”</li>
+<li>hostname隔离，可以另取一个hostname，成为新启动进程的hostname</li>
+<li>IPC隔离，隔离掉进程之间的互相通信</li>
+<li>网络隔离，隔离掉进程和主机之间的网络</li>
+</ul>
+<p>所以虽然docker帮助我们准备好了rootfs地址，镜像里面的文件，以及各种资源隔离的配置，但是在启动一个容器的时候，它只是调用系统中早已内置的可以隔离资源的方法，而kernel支持这些方法，也是在创建进程的方法上做了一层资源隔离的扩展而已。这就解释了docker启动速度快，因为本质来说容器和进程差别没有想象中的大，共享了很多代码，流程也差的不多。</p>
+<h2 id="容器内创建进程"><a href="#容器内创建进程" class="headerlink" title="容器内创建进程"></a>容器内创建进程</h2><p>在fork方法中，第一步就是继承父进程的一切，而这一切包含了父进程已有的资源隔离，所以容器进程创建的进程天然继承容器所有的一切资源隔离，就和虚拟机的pid = 0 的进程创建子进程所拥有的一样。</p>
+<h1 id="boot2docker"><a href="#boot2docker" class="headerlink" title="boot2docker"></a>boot2docker</h1><p>Docker虚拟了网络地址空间和文件系统。实际上，它还虚拟了进程ID空间（pid space）等系统数据结构。这些功能是一个叫dockerd的daemon程序借助Linux内核中的<em>control groups</em>（又叫cgroups）功能实现的。dockerd负责执行集装箱；就像VirtualBox负责执行虚拟机一样。</p>
+<p>因为cgroups功能只有Linux内核有，所以Docker目前只能运行在Linux上。可是，现在很多开发者都在用Mac。为了能让这些开发者方便的测试自己创作的集装箱镜像，Docker的开发者写了boot2docker——利用VirtualBox虚拟一个Linux主机，并且在上面安装dockerd。而命令行控制程序docker执行在Mac主机上，被配置成和虚拟Linux主机上的dockerd协作。</p>
+<p>当我们在Linux主机上启动一个集装箱的时候，我们可以让Docker把主机的某些目录映射成集装箱内的目录。这样集装箱里的程序和主机上的程序共享数据，是一种方便的调试方式。但是在用boot2docker的时候，“主机”不是Mac，而是虚拟Linux主机。此时如果想把Mac上的目录映射到集装箱，先得将其通过VirtualBox映射到Linux主机。</p>
+<p>另一个注意事项和端口转发有关。当我们把集装箱内的某个端口映射为主机的某个端口时，只是映射到了虚拟Linux主机；如果想让Mac上的程序能访问，还得把虚拟机端口通过VirtualBox映射成Mac上的端口。这些注意事项，在下文中会有详细解释。</p>
+<h1 id="CoreOS"><a href="#CoreOS" class="headerlink" title="CoreOS"></a>CoreOS</h1><p>目前最常用的用来执行Docker集装箱的Linux发行版本既不是Ubuntu、Debian也不是RedHat、Fedora，而是<strong>CoreOS</strong>。这个发行版本根本没有软件包管理程序，所以也不能通过输入某个命令来安装软件(apt-get, yum etc)。但是CoreOS预装了Docker，所以可以制作集装箱镜像，或者下载别人发布的集装箱镜像来执行。</p>
+<p>CoreOS和其他Linux发行版本相比，执行效率高、内存耗费省；此外，利用双磁盘分区技术，即便是更新Linux内核也不需要重启。CoreOS还有很多独特之处，使得它在问世后很短的时间里就被Amazon和Google采用。</p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/22382728" target="_blank" rel="external">一篇不一样的docker原理解析 - uncle creepy的文章 - 知乎专栏</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22403015" target="_blank" rel="external">一篇不一样的docker原理解析 提高篇</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/19902938" target="_blank" rel="external">分布式机器学习的故事：Docker改变世界 - Occam’s Razor - 知乎专栏</a></li>
+<li><strong>TODO</strong> <a href="https://zhuanlan.zhihu.com/p/20825896" target="_blank" rel="external">分布式机器学习的故事：Kubernetes和通用机群</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;容器的概念&quot;&gt;&lt;a href=&quot;#容器的概念&quot; class=&quot;headerlink&quot; title=&quot;容器的概念&quot;&gt;&lt;/a&gt;容器的概念&lt;/h1&gt;&lt;p&gt;一般来说，虚拟机都会有自己的kernel，自己的硬件，这样虚拟机启动的时候需要先做开机自检，启动kernel，启动用
+    
+    </summary>
+    
+      <category term="Docker" scheme="http://hezx.github.io/categories/Docker/"/>
+    
+    
+      <category term="docker" scheme="http://hezx.github.io/tags/docker/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker Fundamentals</title>
